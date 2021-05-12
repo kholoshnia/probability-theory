@@ -1,12 +1,14 @@
 package ru.lab.views
 
 import javafx.scene.control.Label
+import javafx.scene.control.TextField
 import tornadofx.View
 import tornadofx.hbox
 import tornadofx.label
 import tornadofx.paddingAll
 import tornadofx.paddingRight
 import tornadofx.singleAssign
+import tornadofx.textfield
 import tornadofx.vbox
 
 
@@ -39,11 +41,11 @@ class ResultsView : View() {
     var mathExpectationValueLabel: Label by singleAssign()
     var varianceValueLabel: Label by singleAssign()
     var msdValueLabel: Label by singleAssign()
-    var statisticalSeriesValueLabel: Label by singleAssign()
-    var distributionFunctionValueLabel: Label by singleAssign()
-    var intervalSeriesValueLabel: Label by singleAssign()
+    var statisticalSeriesValueLabel: TextField by singleAssign()
+    var distributionFunctionValueLabel: TextField by singleAssign()
+    var intervalSeriesValueLabel: TextField by singleAssign()
 
-    override val root = vbox(20) {
+    override val root = vbox(10) {
         paddingAll = 10
 
         hbox {
@@ -76,19 +78,28 @@ class ResultsView : View() {
             msdValueLabel = label()
         }
 
-        hbox {
+        hbox(10) {
             statisticalSeriesLabel = label(STATISTICAL_SERIES)
-            statisticalSeriesValueLabel = label()
+            statisticalSeriesValueLabel = textfield {
+                isEditable = false
+                prefWidth = 1200.0
+            }
         }
 
-        hbox {
+        hbox(10) {
             distributionFunctionLabel = label(DISTRIBUTION_FUNCTION)
-            distributionFunctionValueLabel = label()
+            distributionFunctionValueLabel = textfield {
+                isEditable = false
+                prefWidth = 1200.0
+            }
         }
 
-        hbox {
+        hbox(10) {
             intervalSeriesLabel = label(INTERVAL_SERIES)
-            intervalSeriesValueLabel = label()
+            intervalSeriesValueLabel = textfield {
+                isEditable = false
+                prefWidth = 1200.0
+            }
         }
     }
 }
