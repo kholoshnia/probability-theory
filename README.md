@@ -1,2 +1,2 @@
-# probability-theory
+# Probability theory
 Probability theory labs
